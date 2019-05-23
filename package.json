@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "jest"
+    "test": "jest",
+    "ui": "testcafe chrome ./tests/page_content.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -20,6 +21,8 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-plugin-jest": "^22.6.4",
-    "supertest": "^4.0.2"
+    "eslint-plugin-testcafe": "^0.2.1",
+    "supertest": "^4.0.2",
+    "testcafe": "^1.1.4"
   }
 }

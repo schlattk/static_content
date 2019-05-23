@@ -5,7 +5,7 @@
         "node": true,
         "jest/globals": true
     },
-    "extends": [ "eslint:recommended"],
+    "extends": [ "eslint:recommended", "plugin:testcafe/recommended" ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -28,5 +28,5 @@
           "always"
       ]
     },
-    "plugins": [ "jest" ]
+    "plugins": [ "jest", "testcafe" ]
 }
