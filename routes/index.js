@@ -4,7 +4,6 @@ const fs = require('fs-extra');
 const md = require('markdown-it')();
 const linkifyHtml = require('linkifyjs/html');
 
-
 router.get('/about-page', function(req, res) {
     fs.readFile('./public/content/about-page/index.md', 'utf8')
         .then((data) => md.render(data))

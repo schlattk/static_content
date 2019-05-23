@@ -6,6 +6,9 @@
 * cd static_content
 * npm install
 * npm start to start the application
+  localhost:3000/about-page
+  localhost:3000/jobs
+  localhost:3000/valves
 * npm test to run the 200 and 404 request tests (with Jest/Supertest)
 * npm run ui to run the tests comparing the generated html with the one on the page.
   this is done with testcafe using a Chrome browser
