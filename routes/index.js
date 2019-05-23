@@ -6,9 +6,20 @@ const converter = new showdown.Converter();
 
 /* GET home page. */
 router.get('/about-page', function(req, res) {
-    fs.readFile('./public/content/valves/index.md', 'utf8')
+    fs.readFile('./public/content/about-page/index.md', 'utf8')
         .then((data) => converter.makeHtml(data))
         .then((html) => res.render('index', { message: html }));
 });
 
+router.get('/jobs', function(req, res) {
+    fs.readFile('./public/content/jobs/index.md', 'utf8')
+        .then((data) => converter.makeHtml(data))
+        .then((html) => res.render('index', { message: html }));
+});
+
+router.get('/valves', function(req, res) {
+    fs.readFile('./public/content/valves/index.md', 'utf8')
+        .then((data) => converter.makeHtml(data))
+        .then((html) => res.render('index', { message: html }));
+});
 module.exports = router;
