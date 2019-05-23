@@ -1,15 +1,18 @@
 import { Selector } from 'testcafe';
 const fs = require('fs-extra');
-const showdown  = require('showdown');
-const converter = new showdown.Converter();
+// const showdown  = require('showdown');
+// const converter = new showdown.Converter();
+const md = require('markdown-it')();
+const linkifyHtml = require('linkifyjs/html');
 
 fixture `About-Page`
 
-    .page `http://localhost:3000/acme/about-page`
+    .page `http://localhost:3000/about-page`
     .before(async ctx  => {
         fs.readFile('./public/content/about-page/index.md', 'utf8')
-            .then((data) => converter.makeHtml(data))
-            .then(function (html) { ctx.text = html; } );
+            .then((data) => md.render(data))
+            .then((html) => linkifyHtml(html))
+            .then(function (html_linked) { ctx.text = html_linked; } );
     });
 
 test( 'test the contents of the about-page', async t => {
@@ -22,11 +25,12 @@ test( 'test the contents of the about-page', async t => {
 
 fixture `Jobs-Page`
 
-    .page `http://localhost:3000/acme/jobs`
+    .page `http://localhost:3000/jobs`
     .before(async ctx  => {
         fs.readFile('./public/content/jobs/index.md', 'utf8')
-            .then((data) => converter.makeHtml(data))
-            .then(function (html) { ctx.text = html; } );
+            .then((data) => md.render(data))
+            .then((html) => linkifyHtml(html))
+            .then(function (html_linked) { ctx.text = html_linked; } );
     });
 
 test( 'test the contents of the jobs-page', async t => {
@@ -39,11 +43,12 @@ test( 'test the contents of the jobs-page', async t => {
 
 fixture `Valves-Page`
 
-    .page `http://localhost:3000/acme/valves`
+    .page `http://localhost:3000/valves`
     .before(async ctx  => {
         fs.readFile('./public/content/valves/index.md', 'utf8')
-            .then((data) => converter.makeHtml(data))
-            .then(function (html) { ctx.text = html; } );
+            .then((data) => md.render(data))
+            .then((html) => linkifyHtml(html))
+            .then(function (html_linked) { ctx.text = html_linked; } );
     });
 
 test( 'test the contents of the valves-page', async t => {
