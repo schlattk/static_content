@@ -1,7 +1,5 @@
 import { Selector } from 'testcafe';
 const fs = require('fs-extra');
-// const showdown  = require('showdown');
-// const converter = new showdown.Converter();
 const md = require('markdown-it')();
 const linkifyHtml = require('linkifyjs/html');
 
