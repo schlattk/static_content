@@ -7,10 +7,9 @@
 * npm install
 * npm start to start the application on localhost:3000
 * npm test to run the 200 and 404 request tests (with Jest/Supertest)
-* npm run ui to run the tests comparing the generated html with the one on the page.
-  this is done with testcafe using a Chrome browser
+* npm run ui to run the tests with Testcafe comparing the generated html with the one on the page  (the server needs to run for Testcafe to work and it needs a Chrome browser).
 * all tests should be passing
-* for the md/html conversion I used markdown-it and linkify libraries
+* for the md/html conversion I used Markdown-it and Linkify libraries
 
 
 The challenge here is to create a node.js application that displays HTML pages at URLs that match the names of the folders in the `content` folder. The content of these pages should come from a combination of the template HTML file and a markdown file containing the content.
