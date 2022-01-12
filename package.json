@@ -23,7 +23,7 @@
     "eslint-plugin-jest": "^22.6.4",
     "eslint-plugin-testcafe": "^0.2.1",
     "linkifyjs": "^2.1.8",
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^12.3.2",
     "supertest": "^4.0.2",
     "testcafe": "^1.1.4"
   }
